@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/RM-App/', 
   plugins: [vue()],
   resolve: {
     alias: {
