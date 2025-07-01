@@ -44,13 +44,42 @@ npm install
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
-
 ##  Build for Production
 
 ```bash
 npm run build
 ```
+## Deployment
+
+The application is deployed using GitHub Pages. 
+Follow these steps to deploy:
+
+ Configure vite.config.js: Update the base option with the repository name:
+
+     export default defineConfig({
+     base: '/<repository-name>/', // Replace <repository-name> with your repo name
+     plugins: [vue()],
+    });
+
+Add Deployment Scripts: The necessary scripts are already in package.json:
+
+     "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist"
+    }
+
+Deploy: Run the following commands:
+
+    npm install
+    npm run deploy
+
+    Set Up GitHub Pages:
+
+        Go to the repository settings on GitHub.
+
+        Under Pages, ensure the branch is set to gh-pages.
+
+The application will be accessible at: https://<username>.github.io/<repository-name>/
 
 ##  Usage
 
